@@ -21,7 +21,7 @@ function App() {
     }
   }
 
-  useEffect(()=>
+  useEffect(() =>
     {
       if(countries && countries.length > 0)
       {
@@ -36,7 +36,7 @@ function App() {
       <Router>
         <PageHeader onCountryChange={onCountryChange} currentCountry={country} countries={countries}/>
         <Switch>
-          <Route path="/" exact>
+          <Route path={process.env.PUBLIC_URL + '/'} exact>
             <Home countryData={countryData} />
           </Route>
 
